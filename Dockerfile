@@ -1,10 +1,9 @@
-FROM node:10 as builder
-
-ARG NPM_TOKEN
+FROM node:10-alpine
 
 WORKDIR /usr/src/app
 
 RUN npm i npm@latest -g
+RUN npm install -g serve
 
 COPY package.json package-lock.json ./
 RUN npm install
@@ -12,9 +11,6 @@ COPY . .
 
 RUN npm run build
 
-FROM nginx:stable-alpine
+EXPOSE 5000
 
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
-COPY --from=builder /usr/src/app/nginx.conf /etc/nginx/conf.d/default.conf
-
-CMD [ "nginx", "-g", "daemon off;" ]
+CMD ["serve", "-s", "build"]

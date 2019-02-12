@@ -13,4 +13,4 @@ back:
 	${DCMP} run -p 3001:3000 -d --rm back
 
 front:
-	${DCMP} run -p 8080:3000 -d --rm front
+	${DCMP} run -p 8080:5000 -d --rm front
