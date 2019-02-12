@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  front:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+
+  back:
+    command: --watch /data/db.json
+    build:
+      context: github.com/William-Yeh/docker-json-server
+    volumes:
+      - "./data.json:/data/db.json"
+    ports:
+      - "3001:3000"

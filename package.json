@@ -1,0 +1,191 @@
+{
+  "name": "front-end-showcase",
+  "version": "1.0.0",
+  "description": "Mini projeto onde demonstro atualmente meus conhecimentos em Javascript ES6, ReactJS e Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/test.js",
+    "test:staged": "cross-env CI=true npm test",
+    "start": "cross-env REACT_APP_LOCAL_SERVER_PORT=3001 node scripts/start.js",
+    "build": "node scripts/build.js",
+    "build:analyzer": "cross-env BUNDLE_ANALYZER=true npm run build",
+    "lint": "eslint --fix ./src",
+    "format": "prettier-standard 'src/**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusdsmartins/frontend-teste.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "js"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint && npm run test:staged"
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheusdsmartins/frontend-teste/issues"
+  },
+  "homepage": "https://github.com/matheusdsmartins/frontend-teste/#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^8.0.0",
+    "babel-plugin-emotion": "^9.2.11",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "husky": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-css-modules": "^1.1.0",
+    "lint-staged": "^8.0.4",
+    "node-sass": "^4.9.0",
+    "prettier": "1.11.1",
+    "prettier-standard": "^8.0.1",
+    "react-hot-loader": "^4.1.2",
+    "redux-mock-store": "^1.5.1",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.29.3",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "@material-ui/icons": "^3.0.2",
+    "autoprefixer": "^9.3.1",
+    "axios": "^0.18.0",
+    "babel-plugin-named-asset-import": "^0.2.3",
+    "babel-preset-react-app": "^6.1.0",
+    "bfj": "^6.1.1",
+    "btoa": "^1.2.1",
+    "case-sensitive-paths-webpack-plugin": "^2.1.2",
+    "emotion": "^9.1.2",
+    "emotion-normalize": "^7.0.1",
+    "eslint-loader": "^2.1.1",
+    "fork-ts-checker-webpack-plugin-alt": "^0.4.14",
+    "jest-pnp-resolver": "^1.0.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "pnp-webpack-plugin": "^1.2.0",
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "postcss-safe-parser": "^4.0.1",
+    "prop-types": "^15.6.1",
+    "querystring": "^0.2.0",
+    "react": "^16.3.2",
+    "react-app-polyfill": "^0.1.3",
+    "react-dev-utils": "^6.1.1",
+    "react-dom": "^16.3.2",
+    "react-emotion": "^9.1.2",
+    "react-redux": "^5.0.7",
+    "react-render-html": "^0.6.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0",
+    "redux-persist": "^5.9.1",
+    "redux-saga": "^0.16.0",
+    "regenerator-runtime": "^0.12.1",
+    "terser-webpack-plugin": "^1.1.0",
+    "webpack-manifest-plugin": "^2.0.4",
+    "workbox-webpack-plugin": "^3.6.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "./config/jest/jest.config.js",
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
