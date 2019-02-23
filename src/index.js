@@ -2,11 +2,13 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
+import { Global } from '@emotion/core'
 
 import App from './app'
 import configureStore from './store/configureStore'
 
-import './index.style'
+import globalStyles from './index.style'
+import ThemeSwitcher from './utils/ThemeSwitcher'
 
 const { persistor, store } = configureStore()
 
@@ -22,7 +24,10 @@ const renderApp = NextApp => {
         onBeforeLift={onBeforeLift}
         persistor={persistor}
       >
-        <NextApp />
+        <Global styles={globalStyles} />
+        <ThemeSwitcher>
+          <NextApp />
+        </ThemeSwitcher>
       </PersistGate>
     </Provider>,
     document.getElementById('app')

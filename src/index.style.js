@@ -1,18 +1,35 @@
 import emotionNormalize from 'emotion-normalize'
-import { injectGlobal } from 'emotion'
+import { css } from '@emotion/core'
 
-injectGlobal`
-  ${emotionNormalize}
-  @font-face {
-    font-family: 'Patrick Hand SC';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Patrick Hand SC'),
-      local('PatrickHandSC-Regular'),
-      url(https://fonts.gstatic.com/s/patrickhandsc/v4/OYFWCgfCR-7uHIovjUZXsZ71Uis0Qeb9Gqo8IZV7ckE.woff2)
-        format('woff2');
-    unicode-range: U+0100-024f, U+1-1eff,
-      U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f,
-      U+A720-A7FF;
+export default css`
+  ${emotionNormalize} @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  #app {
+    height: 100%;
+    font-family: 'Open Sans';
+  }
+  ul,
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
   }
 `

@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { fetchBeers } from '../../store/beers/actions'
+import { fetchBeers, setCurrentBeer } from '../../store/beers/actions'
 
 export const withBeers = WrappedComponent => {
   const mapStateToProps = ({ beers }) => ({
     items: beers.items
   })
 
-  const mapDispatchToProps = dispatch => (
-    bindActionCreators({
-      fetchBeers
-    }, dispatch)
-  )
+  const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+      {
+        fetchBeers,
+        setCurrentBeer
+      },
+      dispatch
+    )
 
   class BeersHOC extends Component {
     componentDidMount () {
@@ -21,11 +24,7 @@ export const withBeers = WrappedComponent => {
     }
 
     render () {
-      return (
-        <WrappedComponent
-          {...this.props}
-        />
-      )
+      return <WrappedComponent {...this.props} />
     }
   }
 

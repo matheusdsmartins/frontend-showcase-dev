@@ -1,14 +1,14 @@
 import React from 'react'
 
-const NavBarTemplate = ({
-  children
-}) => (
-  <div>
-    <div>
-      NavBar
-    </div>
-    <div>{children}</div>
-  </div>
+import NavBar from '../navbar/NavBar'
+
+import { Container, Content } from './styles/NavBarTemplate.styles'
+
+const NavBarTemplate = ({ children }) => (
+  <Container>
+    <NavBar />
+    <Content>{children}</Content>
+  </Container>
 )
 
 export default NavBarTemplate

@@ -9,7 +9,8 @@ const initialState = {
   },
   isFetching: false,
   isError: false,
-  errorMessage: ''
+  errorMessage: '',
+  current: null
 }
 
 const auth = createReducer(initialState, {
@@ -25,7 +26,7 @@ const auth = createReducer(initialState, {
   }),
   [types.FETCH_BEERS_SUCCESSFUL]: (state, action) => ({
     ...state,
-    items: action.payload.items,
+    items: action.payload,
     isFetching: false
   }),
   [types.FETCH_BEERS_FAILURE]: (state, action) => ({
@@ -33,6 +34,10 @@ const auth = createReducer(initialState, {
     isFetching: false,
     isError: true,
     errorMessage: action.payload
+  }),
+  [types.SET_CURRENT_BEER]: (state, action) => ({
+    ...state,
+    current: action.payload
   })
 })
 

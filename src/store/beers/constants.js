@@ -1,3 +1,5 @@
 export const FETCH_BEERS = 'beers:FETCH_BEERS'
 export const FETCH_BEERS_SUCCESSFUL = 'beers:FETCH_BEERS_SUCCESSFUL'
 export const FETCH_BEERS_FAILURE = 'beers:FETCH_BEERS_FAILURE'
+
+export const SET_CURRENT_BEER = 'beers:SET_CURRENT_BEER'

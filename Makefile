@@ -4,10 +4,11 @@ DCMP = docker-compose
 NPM = npm
 
 start-local:
-	${NPM} run start && make back
+	make back && ${NPM} run start:local
 
 stop-local:
-	${DCMP} stop back
+	${DCMP} stop back && \
+	${DCMP} down
 
 back:
 	${DCMP} run -p 3001:3000 -d --rm back

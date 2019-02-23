@@ -10,7 +10,8 @@ module.exports = {
         }
       }
     ],
-    '@babel/preset-react'
+    '@babel/preset-react',
+    '@emotion/babel-preset-css-prop'
   ],
   plugins: [
     'react-hot-loader/babel',

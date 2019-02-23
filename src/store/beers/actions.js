@@ -14,3 +14,8 @@ export const fetchBeersFailure = payload => ({
   type: types.FETCH_BEERS_FAILURE,
   payload
 })
+
+export const setCurrentBeer = payload => ({
+  type: types.SET_CURRENT_BEER,
+  payload
+})
