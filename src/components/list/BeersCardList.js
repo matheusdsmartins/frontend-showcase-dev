@@ -6,7 +6,6 @@ import BeerCard from '../card/BeerCard'
 import { CardGrid } from './styles/BeersCardList.styles'
 
 const BeersList = ({ items, setCurrentBeer }) => {
-  console.log(items)
   return (
     <CardGrid>
       {items.map(item => (
