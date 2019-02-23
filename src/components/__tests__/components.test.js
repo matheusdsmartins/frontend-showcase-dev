@@ -2,7 +2,6 @@
 
 import { lstatSync, readdirSync } from 'fs'
 import { join } from 'path'
-import { capitalize } from 'lodash'
 
 const componentsPath = './src/components'
 const ignoreDirectories = ['__tests__', 'shared']
