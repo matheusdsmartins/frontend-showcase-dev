@@ -32,8 +32,8 @@ describe('Components White Box Tests', () => {
        * directory of 'components'
        */
       directories.map(dirName => {
-        const suffix = `${capitalize(dirName)}.js`
-        const suffixRegex = new RegExp(`${suffix}$`)
+        const suffix = `${dirName}.js`
+        const suffixRegex = new RegExp(`${suffix}$`, 'i')
         const files = getFiles(`${componentsPath}/${dirName}`)
 
         files.forEach(fileName => {
