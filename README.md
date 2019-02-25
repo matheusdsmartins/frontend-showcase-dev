@@ -12,7 +12,7 @@ git clone git@github.com:matheusdsmartins/frontend-showcase.git
 
 ### Prerequisities
 
-You'll need:
+You'll need those to run a local docker version:
 
 ```
 Docker - https://www.docker.com/
@@ -32,6 +32,12 @@ First of all, install packages:
 npm install
 ```
 
+For development with a external API (like PunkAPI in this example) run:
+
+```
+npm run start
+```
+
 For local development just run *:
 
 ```
@@ -43,7 +49,17 @@ make start-local
 choco install make
 ```
 
-The applications will be available by default at:
+### Without Docker
+
+The application will be available by default at:
+
+```
+http://localhost:3000
+```
+
+### Docker
+
+Running on docker the applications will be available by default at:
 
 ```
 Front

@@ -3,9 +3,9 @@ import * as types from './constants'
 
 const initialState = {
   items: [],
-  paginate: {
-    _page: 1,
-    _limit: 10
+  pagination: {
+    page: 1,
+    per: 10
   },
   isFetching: false,
   isError: false,
@@ -16,8 +16,8 @@ const initialState = {
 const auth = createReducer(initialState, {
   [types.FETCH_BEERS]: (state, action) => ({
     ...state,
-    paginate: {
-      ...state.paginate,
+    pagination: {
+      ...state.pagination,
       ...action.payload
     },
     isFetching: true,

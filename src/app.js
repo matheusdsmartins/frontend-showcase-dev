@@ -1,5 +1,5 @@
 import React from 'react'
-import { hot } from 'react-hot-loader'
+import { hot } from 'react-hot-loader/root'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import Routes from './routes/Routes'
@@ -12,4 +12,4 @@ const App = () => (
   </Router>
 )
 
-export default hot(module)(App)
+export default hot(App)

@@ -6,7 +6,9 @@ import { fetchBeers, setCurrentBeer } from '../../store/beers/actions'
 
 export const withBeers = WrappedComponent => {
   const mapStateToProps = ({ beers }) => ({
-    items: beers.items
+    items: beers.items,
+    pagination: beers.pagination,
+    isFetching: beers.isFetching
   })
 
   const mapDispatchToProps = dispatch =>
@@ -24,6 +26,8 @@ export const withBeers = WrappedComponent => {
     }
 
     render () {
+      if (this.props.isFetching) return <p>Loading...</p>
+
       return <WrappedComponent {...this.props} />
     }
   }

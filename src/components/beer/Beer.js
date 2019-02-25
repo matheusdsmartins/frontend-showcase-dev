@@ -1,10 +1,10 @@
 import React from 'react'
 import v4 from 'uuid'
 
+import AsyncImage from '../image/AsyncImage'
 import { humanizeCamelCase } from '../../utils/normalizers'
-import Badge from '../badge/Badge'
 
-import { container, itemMeta, Box, meta } from './styles/Beer.styles'
+import { container, ItemMeta, Box, Meta } from './styles/Beer.styles'
 
 const permittedKeys = ['first_brewed', 'ph', 'srm', 'abv', 'ibu', 'ebc']
 
@@ -25,40 +25,25 @@ const Beer = ({ item }) => (
         textAlign: 'center'
       }}
     >
-      <img
+      <AsyncImage
         style={{
           width: '120px',
-          height: 'auto'
+          height: 'auto',
+          marginBottom: 8
         }}
-        src={item.image_url}
+        imageUrl={item.image_url}
       />
     </div>
-    <Box className={itemMeta}>
+    <ItemMeta>
       {Object.keys(item)
         .filter(key => permittedKeys.includes(key))
         .map(key => (
-          <span key={v4()} css={meta}>
-            <strong>{humanizeCamelCase(key)}</strong>:{' '}
-            {Array.isArray(item[key]) ? (
-              item[key].map(subitem => {
-                return typeof subitem !== 'object' ? (
-                  <Badge key={v4()}>{subitem}</Badge>
-                ) : (
-                  Object.keys(item)
-                    .filter(key => permittedKeys.includes(key))
-                    .map(key => (
-                      <Badge key={v4()}>
-                        <strong>{humanizeCamelCase(key)}</strong>: {item[key]}
-                      </Badge>
-                    ))
-                )
-              })
-            ) : (
-              <Badge>{item[key]}</Badge>
-            )}
-          </span>
+          <Meta key={v4()}>
+            <strong>{humanizeCamelCase(key)}</strong>
+            <span>{item[key]}</span>
+          </Meta>
         ))}
-    </Box>
+    </ItemMeta>
     <Box>
       <h2>Description</h2>
       <p>{item.description}</p>
