@@ -9,15 +9,14 @@ const fetchImage = async url => {
       responseType: 'arraybuffer'
     })
     .then(response => {
-      let image = btoa(
+      const image = btoa(
         new Uint8Array(response.data).reduce(
           (data, byte) => data + String.fromCharCode(byte),
           ''
         )
       )
-      return `data:${response.headers[
-        'content-type'
-      ].toLowerCase()};base64,${image}`
+      const contentType = response.headers['content-type'].toLowerCase()
+      return `data:${contentType};base64,${image}`
     })
   return image
 }

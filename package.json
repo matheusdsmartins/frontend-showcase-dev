@@ -10,7 +10,7 @@
     "start:local": "cross-env REACT_APP_SERVICE=jsonApi REACT_APP_LOCAL_SERVER_PORT=3001 node scripts/start.js",
     "build": "cross-env REACT_APP_SERVICE=punkApi node scripts/build.js",
     "build:analyzer": "cross-env BUNDLE_ANALYZER=true npm run build",
-    "lint": "eslint --fix ./src",
+    "lint": "eslint ./src",
     "format": "prettier-standard 'src/**/*.js'"
   },
   "lint-staged": {
@@ -30,8 +30,8 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint && npm run test:staged"
+      "pre-commit": "lint-staged && npm run lint",
+      "pre-push": "npm run test:staged"
     }
   },
   "author": "",
